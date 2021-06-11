@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 62.5%;
+  background: url('/memory_cards/folder/Memory-game-pattern-medium.jpg') repeat
+    top left;
+  background-attachment: fixed;
+  position: relative;
+  line-height: 1.3;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ************** Main Title SVG *************** */
+.svg-wrapper {
+  width: 50%;
+  margin: 3rem auto 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  font: bold 4rem Verdana, Tahoma, sans-serif;
+  width: 60%;
+  height: 8rem;
+}
+
+text {
+  fill: none;
+  stroke: orangered;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  animation: 2s pulsate 2;
+}
+
+@keyframes pulsate {
+  50% {
+    stroke-width: 3px;
+  }
+}
+
+/* ************** **************** *************** */
+
+.hidden {
+  opacity: 0;
+}
+
+/* ************** ************** *************** */
+
+.main-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+/* ************** Separation *************** */
+
+.stats-container {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+
+.stats-current-level-box,
+.stats-current-hits,
+.stats-current-misses,
+.stats-current-timer {
+  width: 100%;
+  text-align: center;
+}
+.stats-current-level-info,
+.stats-current-hits-info,
+.stats-current-misses-info,
+.time-display {
+  font-size: 2.5rem;
+  padding-top: 1rem;
+  color: orangered;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.label {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #fff;
+  text-transform: uppercase;
+}
+
+.cards-container {
+  display: grid;
+  place-content: center;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  grid-template-columns: repeat(4, auto);
+}
+
+.gf-wrapper {
+  background: url(/memory_cards/clean/Blank-test-3.jpg) no-repeat center
+    center/cover;
+  /* background: #fff; */
+  border-radius: 10px;
+  transition: transform 0.4s;
+}
+
+.gamefields {
+  width: 10rem;
+  height: 10rem;
+  background-color: #fff;
+  transition: transform 0.4s;
+  background: url('/memory_cards/SVG/Cards/Card_back_blue.svg') no-repeat center
+    center/cover;
+  border-radius: 10px;
+}
+
+.gamefields:hover,
+.gf-wrapper:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px 2px rgba(51, 51, 51, 0.5);
+  transform: scale(1.05);
+}
+
+button.btn {
+  cursor: pointer;
+  padding: 1rem 4rem;
+  margin: 8rem 0;
+  width: 15%;
+  border: #fff 1px solid;
+  border-radius: 6px;
+
+  background-color: rgba(24, 154, 211, 0);
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+button:hover {
+  border: 1px solid orangered;
+  color: orangered;
+}
+
+button:active {
+  border: 1px solid #fff;
+  color: #fff;
+}
