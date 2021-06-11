@@ -1,4 +1,10 @@
-import { timeDisplay, helperObject, hits, misses } from '../app.js';
+import {
+  timeDisplay,
+  helperObject,
+  hits,
+  misses,
+  memoryCardsEasy,
+} from '../app.js';
 
 export const startTimer = function () {
   let startPoint = 1;
@@ -14,7 +20,10 @@ export const startTimer = function () {
     timeDisplay.textContent = `${hours} : ${minutes} : ${seconds}`;
     startPoint++;
     // Stop timer on level end
-    if (helperObject.levelIsEnded) clearInterval(timer);
+    if (+helperObject.counterPos === memoryCardsEasy.length / 2) {
+      clearInterval(timer);
+      alert('Level finished');
+    }
   }, 1000);
   return timer;
 };
