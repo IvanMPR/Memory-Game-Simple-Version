@@ -80,14 +80,13 @@ text {
   padding-bottom: 3rem;
 }
 
-.stats-current-level-box,
 .stats-current-hits,
 .stats-current-misses,
 .stats-current-timer {
   width: 100%;
   text-align: center;
 }
-.stats-current-level-info,
+
 .stats-current-hits-info,
 .stats-current-misses-info,
 .time-display {
@@ -97,6 +96,7 @@ text {
   font-style: italic;
   text-transform: uppercase;
 }
+
 .label {
   font-size: 3rem;
   color: #fff;
@@ -116,7 +116,6 @@ text {
 .gf-wrapper {
   background: url(/memory_cards/clean/Blank-test-3.jpg) no-repeat center
     center/cover;
-  /* background: #fff; */
   border-radius: 10px;
   transition: transform 0.4s;
 }
@@ -124,9 +123,9 @@ text {
 .gamefields {
   width: 10rem;
   height: 10rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   transition: transform 0.4s;
-  background: url('/memory_cards/SVG/Cards/Card_back_blue.svg') no-repeat center
+  background: url('/memory_cards/clean/Blank-test-3.jpg') no-repeat center
     center/cover;
   border-radius: 10px;
 }
@@ -156,6 +155,7 @@ button.btn {
 button:hover {
   border: 1px solid orangered;
   color: orangered;
+  box-shadow: 1px 1px 5px 2px rgba(51, 51, 51, 0.5);
 }
 
 button:active {
