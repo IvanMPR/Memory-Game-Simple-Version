@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   position: relative;
   line-height: 1.3;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html {
