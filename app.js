@@ -95,12 +95,12 @@ cardsContainer.addEventListener('click', function () {
     setTimeout(() => {
       document
         .getElementById(`${helperObject.id[0]}`)
-        // .closest('.gf-wrapper')
         .classList.toggle('hidden');
+
       document
         .getElementById(`${helperObject.id[1]}`)
-        // .closest('.gf-wrapper')
         .classList.toggle('hidden');
+
       pairMiss();
       addMinus();
       helperObject.guesses = [];
