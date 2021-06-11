@@ -8,8 +8,8 @@ export const timeDisplay = document.querySelector('.time-display');
 const button = document.querySelector('.btn');
 export const hits = document.querySelector('.stats-current-hits-info');
 export const misses = document.querySelector('.stats-current-misses-info');
-const link = document.querySelectorAll('.link');
-const memoryCardsEasy = [
+
+export const memoryCardsEasy = [
   'pattern',
   'pattern',
   'shutter',
@@ -54,7 +54,6 @@ export const helperObject = {
   counterNeg: 0,
   guesses: [],
   id: [],
-  currentLevel: '',
   levelIsEnded: false,
 };
 
