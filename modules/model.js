@@ -38,3 +38,22 @@ export const addMinus = function () {
   helperObject.counterNeg++;
   return (misses.textContent = String(helperObject.counterNeg).padStart(2, 0));
 };
+
+export function displayPastTime(el) {
+  const [hours, minutes, seconds] = el.split(':');
+
+  if (+hours === 0 && +seconds === 0) {
+    return `${+minutes} minutes`;
+  }
+  if (+hours === 0) {
+    return `${+minutes} ${
+      +minutes === 1 ? 'minute' : 'minutes'
+    } and ${+seconds} ${+seconds === 1 ? 'second' : 'seconds'}`;
+  }
+
+  if (+hours !== 0) {
+    return `${+hours} ${+hours === 1 ? 'hour' : 'hours'}, ${+minutes} ${
+      +minutes === 1 ? 'minute' : 'minutes'
+    } and ${+seconds} ${+seconds === 1 ? 'second' : 'seconds'}`;
+  }
+}
