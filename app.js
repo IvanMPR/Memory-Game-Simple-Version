@@ -133,18 +133,18 @@ cardsContainer.addEventListener('click', function () {
 button.addEventListener('click', startTimer);
 
 export function openModal() {
-  const string = `<div class="modal-window">
+  const string = `
   <h2>CONGRATULATIONS !</h2>
   <p>You have finished the game in 2 minutes and 15 seconds,
   with ${helperObject.counterPos + helperObject.counterNeg} attempts in total !
   </p>
-  
-  </div>;`;
+  `;
   modalWindow.insertAdjacentHTML('afterbegin', string);
 
   modalBackground.classList.remove('modal-closed');
   modalBackground.classList.add('modal-open');
 }
+
 function closeModal() {
   modalBackground.classList.remove('modal-open');
   modalBackground.classList.add('modal-closed');
