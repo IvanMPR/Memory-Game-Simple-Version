@@ -1,5 +1,10 @@
 import { flipSound, pairHit, errorTone, pairMiss } from './modules/audio.js';
-import { startTimer, addPlus, addMinus } from './modules/model.js';
+import {
+  startTimer,
+  addPlus,
+  addMinus,
+  displayPastTime,
+} from './modules/model.js';
 
 const cardFields = document.querySelectorAll('.gamefields');
 const wrapperDivs = document.querySelectorAll('.gf-wrapper');
@@ -11,6 +16,7 @@ export const misses = document.querySelector('.stats-current-misses-info');
 const modalBackground = document.querySelector('.modal-background');
 const modalWindow = document.querySelector('.modal-window');
 const buttonModal = document.querySelector('.close-window');
+const time = document.querySelector('.time-display');
 export const memoryCardsEasy = [
   'pattern',
   'pattern',
@@ -135,7 +141,7 @@ button.addEventListener('click', startTimer);
 export function openModal() {
   const string = `
   <h2>CONGRATULATIONS !</h2>
-  <p>You have finished the game in 2 minutes and 15 seconds,
+  <p>You have finished the game in ${displayPastTime(time.textContent)},
   with ${helperObject.counterPos + helperObject.counterNeg} attempts in total !
   </p>
   `;
@@ -148,6 +154,7 @@ export function openModal() {
 function closeModal() {
   modalBackground.classList.remove('modal-open');
   modalBackground.classList.add('modal-closed');
+  location.reload();
 }
 
 buttonModal.addEventListener('click', closeModal);
