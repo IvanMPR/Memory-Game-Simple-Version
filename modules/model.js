@@ -4,6 +4,7 @@ import {
   hits,
   misses,
   memoryCardsEasy,
+  openModal,
 } from '../app.js';
 
 export const startTimer = function () {
@@ -22,7 +23,7 @@ export const startTimer = function () {
     // Stop timer on level end
     if (+helperObject.counterPos === memoryCardsEasy.length / 2) {
       clearInterval(timer);
-      alert('Level finished');
+      openModal();
     }
   }, 1000);
   return timer;

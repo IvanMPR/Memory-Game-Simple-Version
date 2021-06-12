@@ -8,7 +8,9 @@ export const timeDisplay = document.querySelector('.time-display');
 const button = document.querySelector('.btn');
 export const hits = document.querySelector('.stats-current-hits-info');
 export const misses = document.querySelector('.stats-current-misses-info');
-
+const modalBackground = document.querySelector('.modal-background');
+const modalWindow = document.querySelector('.modal-window');
+const buttonModal = document.querySelector('.close-window');
 export const memoryCardsEasy = [
   'pattern',
   'pattern',
@@ -129,3 +131,32 @@ cardsContainer.addEventListener('click', function () {
   }
 });
 button.addEventListener('click', startTimer);
+
+export function openModal() {
+  const string = `<div class="modal-window">
+  <h2>CONGRATULATIONS !</h2>
+  <p>You have finished the game in 2 minutes and 15 seconds,
+  with ${helperObject.counterPos + helperObject.counterNeg} attempts in total !
+  </p>
+  
+  </div>;`;
+  modalWindow.insertAdjacentHTML('afterbegin', string);
+
+  modalBackground.classList.remove('modal-closed');
+  modalBackground.classList.add('modal-open');
+}
+function closeModal() {
+  modalBackground.classList.remove('modal-open');
+  modalBackground.classList.add('modal-closed');
+}
+
+buttonModal.addEventListener('click', closeModal);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && modalBackground.classList.contains('modal-open')) {
+    console.log(e);
+    closeModal();
+  }
+});
+modalBackground.addEventListener('click', function (e) {
+  if (e.target.classList.contains('modal-open')) closeModal();
+});
