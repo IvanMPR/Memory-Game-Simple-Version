@@ -1,7 +1,7 @@
 //prettier-ignore
 import { flipSound, pairHit, errorTone, pairMiss, startGameTone } from './modules/audio.js';
 //prettier-ignore
-import {  startTimer, addPlus,  addMinus, shuffle } from './modules/model.js';
+import {  startTimer, addPlus,  addMinus, shuffle, resetHelperObject } from './modules/model.js';
 
 import { closeModal } from './modules/modal.js';
 
@@ -73,9 +73,7 @@ cardsContainer.addEventListener('click', function () {
 
       pairMiss();
       addMinus();
-      helperObject.guesses = [];
-      helperObject.id = [];
-      cardsContainer.style.pointerEvents = 'initial';
+      resetHelperObject();
     }, 1500);
     // Else block from below handles true guess
   } else {
@@ -93,9 +91,7 @@ cardsContainer.addEventListener('click', function () {
         .closest('.gf-wrapper').style.visibility = 'hidden';
       pairHit();
       addPlus();
-      helperObject.guesses = [];
-      helperObject.id = [];
-      cardsContainer.style.pointerEvents = 'initial';
+      resetHelperObject();
     }, 1500);
   }
 });
@@ -105,7 +101,7 @@ button.addEventListener('click', function () {
   startTimer();
   button.style.display = 'none';
   statsContainer.classList.remove('pushed-below');
-  statsContainer.classList.add('normal-position');
+  statsContainer.classList.add('slide-in');
 });
 
 buttonModal.addEventListener('click', closeModal);
