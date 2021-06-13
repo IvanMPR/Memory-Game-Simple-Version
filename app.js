@@ -13,7 +13,6 @@ export const misses = document.querySelector('.stats-current-misses-info');
 export const modalBackground = document.querySelector('.modal-background');
 export const modalWindow = document.querySelector('.modal-window');
 const buttonModal = document.querySelector('.close-window');
-export const time = document.querySelector('.time-display');
 const statsContainer = document.querySelector('.stats-container');
 export const memoryCardsEasy = [
   'pattern',

@@ -85,7 +85,7 @@ text {
   padding: 2rem;
 }
 
-/* ************** Separation *************** */
+/* ************** *************** *************** */
 
 .stats-container {
   width: 80%;
@@ -179,6 +179,7 @@ button:active {
 }
 
 /* ************** Modal styling *************** */
+
 .modal-background {
   position: absolute;
   top: 0;
@@ -193,7 +194,6 @@ button:active {
 
 .modal-window {
   width: 35%;
-  /* height: 25%; */
   background-color: #333;
   text-align: center;
   line-height: 1.5;
