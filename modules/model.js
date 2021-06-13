@@ -45,6 +45,11 @@ export function displayPastTime(el) {
   if (+hours === 0 && +seconds === 0) {
     return `${+minutes} ${+minutes === 1 ? 'minute' : 'minutes'}`;
   }
+
+  if (+hours === 0 && +minutes === 0) {
+    return `${+seconds} seconds`;
+  }
+
   if (+hours === 0) {
     return `${+minutes} ${
       +minutes === 1 ? 'minute' : 'minutes'
