@@ -3,6 +3,7 @@ import {
   helperObject,
   hits,
   misses,
+  cardsContainer,
   memoryCardsEasy,
 } from '../app.js';
 import { openModal } from './modal.js';
@@ -82,4 +83,10 @@ export function shuffle(array) {
   }
 
   return array;
+}
+
+export function resetHelperObject() {
+  helperObject.guesses = [];
+  helperObject.id = [];
+  cardsContainer.style.pointerEvents = 'initial';
 }
