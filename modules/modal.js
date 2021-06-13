@@ -1,9 +1,14 @@
-import { modalWindow, modalBackground, time, helperObject } from '../app.js';
+import {
+  modalWindow,
+  modalBackground,
+  timeDisplay,
+  helperObject,
+} from '../app.js';
 import { displayPastTime } from './model.js';
 export function openModal() {
   const string = `
   <h2>CONGRATULATIONS !</h2>
-  <p>You have finished the game in ${displayPastTime(time.textContent)},
+  <p>You have finished the game in ${displayPastTime(timeDisplay.textContent)},
   with ${helperObject.counterPos + helperObject.counterNeg} attempts in total !
   </p>
   `;
