@@ -193,7 +193,7 @@ button:active {
 
 .modal-window {
   width: 35%;
-  height: 25%;
+  /* height: 25%; */
   background-color: #333;
   text-align: center;
   line-height: 1.5;
