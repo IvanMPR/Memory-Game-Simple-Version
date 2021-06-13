@@ -1,7 +1,7 @@
 //prettier-ignore
 import { flipSound, pairHit, errorTone, pairMiss, startGame } from './modules/audio.js';
 //prettier-ignore
-import {  startTimer, addPlus,  addMinus } from './modules/model.js';
+import {  startTimer, addPlus,  addMinus, shuffle } from './modules/model.js';
 
 import { closeModal } from './modules/modal.js';
 
@@ -18,26 +18,6 @@ const statsContainer = document.querySelector('.stats-container');
 //prettier-ignore
 export const memoryCardsEasy = ['pattern', 'pattern', 'shutter', 'shutter', 'compass', 'compass', 'social', 'social', 'target', 'target', 'envelope', 'envelope',  'camera', 'camera', 'barcode', 'barcode']
 
-// Knuth-Yates shuffle function. Borrowed code ! Shuffles cards on start of the level
-const shuffle = function (array) {
-  var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-
-  //While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    //Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    //And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-};
 // helperObject stores temporary information for comparing guesses
 export const helperObject = {
   counterPos: 0,
