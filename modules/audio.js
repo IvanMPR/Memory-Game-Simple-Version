@@ -24,7 +24,7 @@ export const pairMiss = function () {
   return tone.play();
 };
 
-export const startGame = function () {
+export const startGameTone = function () {
   const tone = new Audio(
     'memory_cards/sounds/350872__cabled-mess__coin-c-01.wav'
   );

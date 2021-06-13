@@ -1,5 +1,5 @@
 //prettier-ignore
-import { flipSound, pairHit, errorTone, pairMiss, startGame } from './modules/audio.js';
+import { flipSound, pairHit, errorTone, pairMiss, startGameTone } from './modules/audio.js';
 //prettier-ignore
 import {  startTimer, addPlus,  addMinus, shuffle } from './modules/model.js';
 
@@ -101,7 +101,7 @@ cardsContainer.addEventListener('click', function () {
 });
 
 button.addEventListener('click', function () {
-  startGame();
+  startGameTone();
   startTimer();
   button.style.display = 'none';
   statsContainer.classList.remove('pushed-below');
