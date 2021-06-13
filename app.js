@@ -1,6 +1,7 @@
 import { flipSound, pairHit, errorTone, pairMiss } from './modules/audio.js';
 //prettier-ignore
-import {  startTimer, addPlus,  addMinus, displayPastTime } from './modules/model.js';
+import {  startTimer, addPlus,  addMinus } from './modules/model.js';
+
 import { closeModal } from './modules/modal.js';
 
 const cardFields = document.querySelectorAll('.gamefields');
