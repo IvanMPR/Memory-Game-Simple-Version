@@ -4,8 +4,8 @@ import {
   hits,
   misses,
   memoryCardsEasy,
-  openModal,
 } from '../app.js';
+import { openModal } from './modal.js';
 
 export const startTimer = function () {
   let startPoint = 1;
@@ -43,7 +43,7 @@ export function displayPastTime(el) {
   const [hours, minutes, seconds] = el.split(':');
 
   if (+hours === 0 && +seconds === 0) {
-    return `${+minutes} minutes`;
+    return `${+minutes} ${+minutes === 1 ? 'minute' : 'minutes'}`;
   }
   if (+hours === 0) {
     return `${+minutes} ${
