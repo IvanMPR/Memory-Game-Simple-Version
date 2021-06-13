@@ -1,22 +1,19 @@
 import { flipSound, pairHit, errorTone, pairMiss } from './modules/audio.js';
-import {
-  startTimer,
-  addPlus,
-  addMinus,
-  displayPastTime,
-} from './modules/model.js';
+//prettier-ignore
+import {  startTimer, addPlus,  addMinus, displayPastTime } from './modules/model.js';
+import { closeModal } from './modules/modal.js';
 
 const cardFields = document.querySelectorAll('.gamefields');
-const wrapperDivs = document.querySelectorAll('.gf-wrapper');
 const cardsContainer = document.querySelector('.cards-container');
 export const timeDisplay = document.querySelector('.time-display');
 const button = document.querySelector('.btn');
 export const hits = document.querySelector('.stats-current-hits-info');
 export const misses = document.querySelector('.stats-current-misses-info');
-const modalBackground = document.querySelector('.modal-background');
-const modalWindow = document.querySelector('.modal-window');
+export const modalBackground = document.querySelector('.modal-background');
+export const modalWindow = document.querySelector('.modal-window');
 const buttonModal = document.querySelector('.close-window');
-const time = document.querySelector('.time-display');
+export const time = document.querySelector('.time-display');
+const statsContainer = document.querySelector('.stats-container');
 export const memoryCardsEasy = [
   'pattern',
   'pattern',
@@ -62,7 +59,6 @@ export const helperObject = {
   counterNeg: 0,
   guesses: [],
   id: [],
-  levelIsEnded: false,
 };
 
 window.addEventListener('load', function () {
@@ -73,6 +69,7 @@ window.addEventListener('load', function () {
     field.classList.add('hidden');
   });
 });
+
 // First listener on cardsContainer. Checks if e.target is correct and pushes two attributes to helperObject
 cardsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('gamefields')) return;
@@ -82,6 +79,7 @@ cardsContainer.addEventListener('click', function (e) {
   helperObject.guesses.push(e.target.style.backgroundImage);
   helperObject.id.push(e.target.id);
 });
+
 // Second listener on cardsContainer prevents double click on opened card and determines whether the guess is true or false
 cardsContainer.addEventListener('click', function () {
   if (helperObject.guesses.length !== 2) return;
@@ -136,34 +134,16 @@ cardsContainer.addEventListener('click', function () {
     }, 1500);
   }
 });
-button.addEventListener('click', startTimer);
 
-export function openModal() {
-  const string = `
-  <h2>CONGRATULATIONS !</h2>
-  <p>You have finished the game in ${displayPastTime(time.textContent)},
-  with ${helperObject.counterPos + helperObject.counterNeg} attempts in total !
-  </p>
-  `;
-  modalWindow.insertAdjacentHTML('afterbegin', string);
-
-  modalBackground.classList.remove('modal-closed');
-  modalBackground.classList.add('modal-open');
-}
-
-function closeModal() {
-  modalBackground.classList.remove('modal-open');
-  modalBackground.classList.add('modal-closed');
-  location.reload();
-}
+button.addEventListener('click', function () {
+  startTimer();
+  button.style.display = 'none';
+  statsContainer.classList.remove('pushed-below');
+  statsContainer.classList.add('normal-position');
+});
 
 buttonModal.addEventListener('click', closeModal);
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && modalBackground.classList.contains('modal-open')) {
-    console.log(e);
-    closeModal();
-  }
-});
+
 modalBackground.addEventListener('click', function (e) {
   if (e.target.classList.contains('modal-open')) closeModal();
 });
