@@ -1,10 +1,5 @@
-import {
-  flipSound,
-  pairHit,
-  errorTone,
-  pairMiss,
-  startGame,
-} from './modules/audio.js';
+//prettier-ignore
+import { flipSound, pairHit, errorTone, pairMiss, startGame } from './modules/audio.js';
 //prettier-ignore
 import {  startTimer, addPlus,  addMinus } from './modules/model.js';
 
@@ -20,24 +15,8 @@ export const modalBackground = document.querySelector('.modal-background');
 export const modalWindow = document.querySelector('.modal-window');
 const buttonModal = document.querySelector('.close-window');
 const statsContainer = document.querySelector('.stats-container');
-export const memoryCardsEasy = [
-  'pattern',
-  'pattern',
-  'shutter',
-  'shutter',
-  'compass',
-  'compass',
-  'social',
-  'social',
-  'target',
-  'target',
-  'envelope',
-  'envelope',
-  'camera',
-  'camera',
-  'barcode',
-  'barcode',
-];
+//prettier-ignore
+export const memoryCardsEasy = ['pattern', 'pattern', 'shutter', 'shutter', 'compass', 'compass', 'social', 'social', 'target', 'target', 'envelope', 'envelope',  'camera', 'camera', 'barcode', 'barcode']
 
 // Knuth-Yates shuffle function. Borrowed code ! Shuffles cards on start of the level
 const shuffle = function (array) {
