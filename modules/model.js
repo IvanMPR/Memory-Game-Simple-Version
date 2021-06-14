@@ -6,6 +6,7 @@ import {
   cardsContainer,
   memoryCardsEasy,
 } from '../app.js';
+import { endGameTone } from './audio.js';
 import { openModal } from './modal.js';
 
 export const startTimer = function () {
@@ -21,10 +22,11 @@ export const startTimer = function () {
     }
     timeDisplay.textContent = `${hours} : ${minutes} : ${seconds}`;
     startPoint++;
-    // Stop timer on level end
+    // Stop timer, open modal and play end level sound
     if (+helperObject.counterPos === memoryCardsEasy.length / 2) {
       clearInterval(timer);
       openModal();
+      endGameTone();
     }
   }, 1000);
   return timer;
@@ -90,3 +92,15 @@ export function resetHelperObject() {
   helperObject.id = [];
   cardsContainer.style.pointerEvents = 'initial';
 }
+
+export function toggleHideShow(el, classList = 'hidden') {
+  return document.getElementById(`${el}`).classList.toggle(`${classList}`);
+}
+
+export function addHiddenClass(el, classList = 'hidden') {
+  return document.getElementById(`${el}`).classList.add(`${classList}`);
+}
+// export function addHiddenToClosestParent(el) {
+//   return (document.getElementById(el).closest('gf-wrapper').style.visibility =
+//     'hidden');
+// }
