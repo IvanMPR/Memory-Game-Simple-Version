@@ -1,11 +1,5 @@
-import {
-  timeDisplay,
-  helperObject,
-  hits,
-  misses,
-  cardsContainer,
-  memoryCardsEasy,
-} from '../app.js';
+//prettier-ignore
+import { timeDisplay, helperObject, hits, misses, cardsContainer, memoryCardsEasy } from '../app.js';
 import { endGameTone } from './audio.js';
 import { openModal } from './modal.js';
 
@@ -43,6 +37,7 @@ export const addMinus = function () {
 };
 
 export function displayPastTime(el) {
+  // Handling the passed time interval into modal message text
   const [hours, minutes, seconds] = el.split(':');
 
   if (+hours === 0 && +seconds === 0) {
@@ -66,7 +61,7 @@ export function displayPastTime(el) {
   }
 }
 
-// Knuth-Yates shuffle function. Borrowed code ! Shuffles cards on start of the level
+// Knuth-Yates shuffle function. ! Borrowed code ! Shuffles cards on start of the level
 export function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue,
@@ -100,7 +95,3 @@ export function toggleHideShow(el, classList = 'hidden') {
 export function addHiddenClass(el, classList = 'hidden') {
   return document.getElementById(`${el}`).classList.add(`${classList}`);
 }
-// export function addHiddenToClosestParent(el) {
-//   return (document.getElementById(el).closest('gf-wrapper').style.visibility =
-//     'hidden');
-// }

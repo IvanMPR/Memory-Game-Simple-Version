@@ -17,7 +17,6 @@ const buttonModal = document.querySelector('.close-window');
 const statsContainer = document.querySelector('.stats-container');
 //prettier-ignore
 export const memoryCardsEasy = ['pattern', 'pattern', 'shutter', 'shutter', 'compass', 'compass', 'social', 'social', 'target', 'target', 'envelope', 'envelope',  'camera', 'camera', 'barcode', 'barcode']
-
 // helperObject stores temporary information for comparing guesses
 export const helperObject = {
   counterPos: 0,
@@ -50,7 +49,7 @@ cardsContainer.addEventListener('click', function () {
     resetHelperObject();
     errorTone();
     setTimeout(() => {
-      alert('Please Click On Two Different Cards !');
+      alert('Please Click On Two Different Fields !');
     }, 100);
 
     return;
@@ -70,20 +69,17 @@ cardsContainer.addEventListener('click', function () {
   } else {
     cardsContainer.style.pointerEvents = 'none';
     setTimeout(() => {
+      // Hide first card and it's parent div wrapper
       addHiddenClass(helperObject.id[0]);
-      // addHiddenToClosestParent(helperObject.id[0]);
-      addHiddenClass(helperObject.id[1]);
-      // addHiddenToClosestParent(helperObject.id[1]);
-      // document.getElementById(`${helperObject.id[0]}`).style.visibility =
-      //   'hidden';
       document
         .getElementById(`${helperObject.id[0]}`)
         .closest('.gf-wrapper').style.visibility = 'hidden';
-      // document.getElementById(`${helperObject.id[1]}`).style.visibility =
-      //   'hidden';
+      // Hide second card and it's parent div wrapper
+      addHiddenClass(helperObject.id[1]);
       document
         .getElementById(`${helperObject.id[1]}`)
         .closest('.gf-wrapper').style.visibility = 'hidden';
+
       pairHit();
       addPlus();
       resetHelperObject();
@@ -100,6 +96,7 @@ button.addEventListener('click', function () {
     field.style.backgroundImage = `url(memory_cards/easy/${memoryCardsEasy[i]}.jpg)`;
     field.classList.add('hidden');
   });
+
   cardsContainer.style.pointerEvents = 'initial';
   button.style.display = 'none';
   statsContainer.classList.remove('pushed-below');
