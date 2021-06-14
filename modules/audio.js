@@ -17,7 +17,7 @@ export const errorTone = function () {
   return tone.play();
 };
 
-export const pairMiss = function () {
+export const pairMissTone = function () {
   const tone = new Audio(
     'memory_cards/sounds/140773__qubodup__computer-beep-sfx-for-videogames.wav'
   );
@@ -28,5 +28,10 @@ export const startGameTone = function () {
   const tone = new Audio(
     'memory_cards/sounds/350872__cabled-mess__coin-c-01.wav'
   );
+  return tone.play();
+};
+
+export const endGameTone = function () {
+  const tone = new Audio('memory_cards/sounds/320775__rhodesmas__win-02.wav');
   return tone.play();
 };
