@@ -5,7 +5,7 @@ Try to reveal all the pairs with as few guesses as possible.
 <br/>
 <img width="100%" src="memory_cards/folder/screenshot.jpg"/>
 <br/>
-# Few words about technical way of game creation...
+# Few words about technical way of game creation..
 The app is made with HTML, CSS and Vanilla JavaScript.
 Even being well aware that this is a fairly simple project, for the sake of practice I made it using ES6 Modules.
 JavaScript code is splitted between app, model, audio and modal scripts.
