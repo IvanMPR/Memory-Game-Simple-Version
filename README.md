@@ -1,5 +1,5 @@
 # About Memory Game Project
-Hello ! This is my implementation of well known Memory Game. There are 16 cards( 8 pairs in total ).
+Hello ! <a href="https://ivanmpr.github.io/Memory-Game-Simple-Version/">This</a> is my implementation of well known Memory Game. There are 16 cards( 8 pairs in total ).
 Try to reveal all the pairs with as few guesses as possible.
 <br/>
 <br/>
